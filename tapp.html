@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/backverska.css">
+    <script rel="stylesheet" href="./css/backverstka.js"></script>
+    <script rel="stylesheet" href="./css/item.js"></script>
+    <title>TAP</title>
+</head>
+<body>
+        <div class="container">
+            <div class="tabs">
+                <span id = "tab1" data-tab-value="#tab_1">TAP</span>
+                <span data-tab-value="#tab_2">SHOP</span>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tabs__tab active" id="tab_1" data-tab-info>
+                    <div class = "background">
+                        <div class = "main">
+                            <p> 2025<br>VSMOKEQQ<br>COIN</p>
+                        </div>
+                        <div class ="amount">
+                            <div id = "coin">
+                                <img style = "width: 50px; height: 50px;" src = "COIN.png"></img>
+                            </div>
+                            <div id = "coins">
+                                <p id = "carrier">0</p>
+                            </div>
+                        </div>
+                        <div onclick = "displaycount()" class = "tap"><img id = "tap" src = "COIN.png"></img></div>
+                        <div class = "links">
+                            <div><a href = "https://t.me/vsmokeqq"><img id = "tg" src ="тг.jpg"></img></a></div>
+                            <div><a href = "https://vk.com/vsmokeqqstore"><img id = "vk" src ="вк.png"></img></a></div>
+                            <div><a href = "https://www.instagram.com/vsmokeqq"></a><img id = "ig" src ="ig.svg" href = ""></img></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs__tab" id="tab_2" data-tab-info>
+                    <div class = "backgroundshop">
+                        <div id = "item1" class = "item1"><img class = "design1" src = "худак.png"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>7,000,000</b></div></div>
+                        <div id = "item2" class = "item2"><img class = "design2" src = "тишка.png"></img><div class = "price2"><img id = "amountcoins" src = "COIN.png"></img><b>3,000,000</b></div></div>
+                        <div id = "item3" class = "item3"><img class = "design3" src = "шарф.png"></img><div class = "price3"><img id = "amountcoins" src = "COIN.png"></img><b>1,500,000</b></div></div>
+                        <div id = "item4" class = "item4"><p>free shiping</p><div class = "price4"><img id = "amountcoins" src = "COIN.png"></img><b>300,000</b></div></div>
+                        <div id = "item5" class = "item5"><p>15% discount<br>on any<br>item</p><div class = "price5"><img id = "amountcoins" src = "COIN.png"></img><b>200,000</b></div></div>
+
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    const tabs = document.querySelectorAll('[data-tab-value]')
+    const tabInfos = document.querySelectorAll('[data-tab-info]')
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document
+                .querySelector(tab.dataset.tabValue);
+            tabInfos.forEach(tabInfo => {
+                tabInfo.classList.remove('active')
+            })
+            target.classList.add('active');
+        })
+    })
+</script>
+
+<script>
+    var count = (function() {
+        var counter = 0;
+        return function (){return counter += 1;}
+
+        })();                                                    //СЧЁТЧИК TAP
+        
+        function displaycount(){
+            document.getElementById("carrier").innerHTML = count();
+        }
+</script>
+
+<script>
+        const item1 = document.getElementById("item1");
+    let modalOpen1 = false;
+    
+    if (item1) {
+        item1.addEventListener("click", function () {
+            if (!modalOpen1) {
+                openModal();
+            }
+        });
+    }                                                            //ПЕРВЫЙ ITEM
+    function openModal() {
+        modalOpen1 = true;
+        const modal = document.createElement("div");
+        modal.id = "modal";
+        modal.innerHTML = `
+            <h3>Вы уверены, что хотите купить:</h3>
+            <div class = "itemX"><img class = "design1" src = "худак.png"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>7,000,000</b></div></div>
+            <button id="openModal">Да</button>
+            <button id="closeModal">Нет</button>
+        `;
+        
+        document.body.appendChild(modal);
+        
+        document.getElementById("openModal").addEventListener("click", function () {
+            modal.remove();
+            modalOpen1 = false;
+        });
+
+        document.body.appendChild(modal);
+        
+        document.getElementById("closeModal").addEventListener("click", function () {
+            modal.remove();
+            modalOpen1 = false;
+        });
+    }
+</script>
+
+</html>

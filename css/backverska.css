@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tab-content{
+    width: 100vw;
+    height: 100vh;
+} 
+
+[data-tab-info] {
+    display: none;
+}
+
+.active[data-tab-info] {
+    display: block;
+}
+.tabs__tab{
+    height: 100vh;
+}
+
+.tabs {
+    background-color: rgb(255, 255, 255);
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    display: flex;
+}
+
+#tab1{
+    border-right: 0.5px solid rgb(0, 0, 0);
+}
+.tabs span {
+    background: rgb(255, 255, 255);
+    width: 50vw;
+    height: 8vh;
+    border-bottom: 0.5px solid rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs span:hover {
+    background: rgb(231, 231, 231);
+    cursor: pointer;
+    color: black;
+}
+.background{
+    width: 100vw;
+    height: 110vh;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main{
+    margin-top: 9vh;
+    color:rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 3vh;
+    text-align: center;
+    padding-top: 35px;
+    font-size: 3vh;
+}
+#coin{
+    margin-top: 7px;
+    margin-right: 8px;
+}
+#coins{
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+.amount{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+
+}
+#tap{
+    margin-top: 25px;
+    width: 85vw;
+}
+.tap{
+    height: 45vh;
+}
+#tap:active{
+    animation-duration: 2s;
+    height: 38vh;
+    width: 84vw;
+}
+.links{
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: row;
+}
+#tg{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+#vk{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+#ig{
+    width: 40px;
+    height: 40px;
+}
+.backgroundshop{
+    width: 100vw;
+    height: 220vh;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#item1, #item2, #item3, #item4, #item5{
+    margin-top: 100px;
+    width: 75vw;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    flex-direction: column;
+}
+
+
+
+
+
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 35vh;
+    width: 67vw;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1500;
+}
+#openModal {
+    background-color: #fff;
+    width: 15vh;
+    height: 15vw;
+    padding: 1vh 5vw;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#closeModal {
+    background-color: #fff;
+    width: 15vh;
+    height: 15vw;
+    margin-top: 1vh;
+    margin-left: 1.05vw;
+    padding: 1vh 5vw;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+.tabs{
+    position: fixed;
+}
+.backgroundshop p{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vh;   
+}
+#amountcoins{
+    height: 2.5vh;
+    margin-right: 1vw;
+}
+.design1{
+    height: 25vh;
+}
+.price1{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh;
+    margin-top: 0vh;
+}
+.design2{
+    height: 25vh;
+}
+.price2{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh;
+    margin-top: -0.5vh;
+}
+.design3{
+    height: 25vh;
+}
+.price3{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh;
+    margin-top: -0.5vh;
+}
+.item4 p{
+    margin-top: 11vh;
+}
+.price4{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh;
+    margin-top: 8.5vh;
+}
+
+.item5 p{
+    margin-top: 7vh;
+}
+.price5{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh;
+    margin-top: 3vh;
+}
+.itemX{
+    width: 50vw;
+    height: 27vh;
+    margin-top: -2vh;
+    margin-left: 6vw;
+}
+.itemX.design1{
+    margin-bottom: 3vh;
+    height: 5vh;
+}
+.itemX div.price1{
+    margin-top: -2vh;
+    margin-left: 12vw;
+}
