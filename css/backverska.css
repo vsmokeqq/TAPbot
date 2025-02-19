@@ -41,14 +41,14 @@
 }
 
 .tabs span:hover {
-    background: rgb(231, 231, 231);
+    background: rgb(189, 189, 189);
     cursor: pointer;
     color: black;
 }
 .background{
     width: 100vw;
     height: 110vh;
-    background-color: #232323;
+    background-color: #1b1b1b;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -85,8 +85,7 @@
     height: 45vh;
 }
 #tap:active{
-    animation-duration: 2s;
-    height: 38vh;
+    animation-duration: 0.01s;
     width: 84vw;
 }
 .links{
@@ -111,7 +110,7 @@
 .backgroundshop{
     width: 100vw;
     height: 220vh;
-    background-color: #232323;
+    background-color: #1b1b1b;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -134,37 +133,66 @@
 
 #modal {
     position: fixed;
+    padding: 2vh 2vw 2vh 2vw;
     top: 50%;
     left: 50%;
-    height: 35vh;
-    width: 67vw;
+    height: 40vh;
+    width: 75vw;
     transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
+    background: rgb(255, 255, 255);
     border-radius: 20px;
-    text-align: center;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
     z-index: 1500;
 }
 #openModal {
     background-color: #fff;
-    width: 15vh;
-    height: 15vw;
+    width: 40vw;
+    height: 80%;
     padding: 1vh 5vw;
     border-radius: 30px;
     cursor: pointer;
 }
 #closeModal {
     background-color: #fff;
-    width: 15vh;
-    height: 15vw;
-    margin-top: 1vh;
-    margin-left: 1.05vw;
+    width: 40vw;
+    height: 80%;
     padding: 1vh 5vw;
     border-radius: 30px;
+    margin-left: 3vw;
     cursor: pointer;
+}
+#openModal4 {
+    background-color: #fff;
+    width: 40vw;
+    height: 80%;
+    padding: 1vh 5vw;
+    border-radius: 30px;
+    margin-left: 3vw;
+    cursor: pointer;
+}
+#closeModal4 {
+    background-color: #fff;
+    width: 40vw;
+    height: 80%;
+    padding: 1vh 5vw;
+    border-radius: 30px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    cursor: pointer;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    margin-top: 2%;
+    
 }
 
 
@@ -187,10 +215,10 @@
     display: flex;
     flex-direction: row;
     font-size: 2.5vh;
-    margin-top: 0vh;
+    height: 10%;
 }
 .design2{
-    height: 25vh;
+    height: 26vh;
 }
 .price2{
     display: flex;
@@ -206,6 +234,13 @@
     flex-direction: row;
     font-size: 2.5vh;
     margin-top: -0.5vh;
+}
+.design4{
+    height: 100%;
+}
+.design5{
+    height: 100%;
+    margin-bottom: 0%;
 }
 .item4 p{
     margin-top: 11vh;
@@ -227,10 +262,7 @@
     margin-top: 3vh;
 }
 .itemX{
-    width: 50vw;
-    height: 27vh;
-    margin-top: -2vh;
-    margin-left: 6vw;
+    height: 65%;
 }
 .itemX.design1{
     margin-bottom: 3vh;
@@ -238,5 +270,38 @@
 }
 .itemX div.price1{
     margin-top: -2vh;
-    margin-left: 12vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+#modalYes{
+    position: fixed;
+    padding: 2vh 2vw 2vh 2vw;
+    top: 50%;
+    left: 50%;
+    height: 20vh;
+    width: 75vw;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    z-index: 1500;
+}
+.YES h2{
+    top: 50%;
+    padding: 3vh 0% 90vh 0%;
+}
+#krest{
+    width: 10%;
+    height: 10%;
+    margin-left: 84%;
+}
+.YES{
+    height: 100%;
 }
