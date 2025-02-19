@@ -69,52 +69,323 @@
 
 <script>
     var count = (function() {
-        var counter = 0;
-        return function (){return counter += 1;}
-
-        })();                                                    //СЧЁТЧИК TAP
-        
-        function displaycount(){
-            document.getElementById("carrier").innerHTML = count();
+        var counter = localStorage.getItem("counter") ? parseInt(localStorage.getItem("counter")) : 0;
+        return function () {
+            counter += 1;
+            localStorage.setItem("counter", counter);
+            console.log("Текущее значение счётчика: ", counter);
+            return counter;
         }
+    })();                                                                      //СЧЁТЧИК
+    
+    function displaycount() {
+        document.getElementById("carrier").innerHTML = count();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var savedCounter = localStorage.getItem("counter");
+        if (savedCounter) {
+            document.getElementById("carrier").innerHTML = savedCounter;
+        }
+        console.log("Значение счётчика при загрузке: ", savedCounter);
+    });
 </script>
+
 
 <script>
         const item1 = document.getElementById("item1");
-    let modalOpen1 = false;
+        let modalOpen1 = false;
     
     if (item1) {
         item1.addEventListener("click", function () {
             if (!modalOpen1) {
-                openModal();
+                openModal1();
             }
         });
     }                                                            //ПЕРВЫЙ ITEM
-    function openModal() {
+    function openModal1() {
         modalOpen1 = true;
-        const modal = document.createElement("div");
-        modal.id = "modal";
-        modal.innerHTML = `
-            <h3>Вы уверены, что хотите купить:</h3>
+        const modal1 = document.createElement("div");
+        modal1.id = "modal";
+        modal1.innerHTML = `
+            <div><h2>Вы уверены, что хотите купить:</h2></div>
             <div class = "itemX"><img class = "design1" src = "худак.png"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>7,000,000</b></div></div>
-            <button id="openModal">Да</button>
-            <button id="closeModal">Нет</button>
+            <div class = "buttons"><button id="openModal"><h2>Да</h2></button>
+            <button id="closeModal"><h2>Нет</h2></button></div>
         `;
         
-        document.body.appendChild(modal);
+        document.body.appendChild(modal1);
         
         document.getElementById("openModal").addEventListener("click", function () {
-            modal.remove();
+            modal1.remove();
             modalOpen1 = false;
-        });
 
-        document.body.appendChild(modal);
+            let counter = localStorage.getItem("counter");
+
+            if(counter < 7000000){
+                openModalYes();
+            }
+            else if(counter >= 7000000){
+                openModalYes1();
+                counter -= 7000000;
+                localStorage.setItem("counter", counter);
+                document.getElementById("carrier").innerHTML = counter;
+                console.log("После вычитания 7000000: ", counter);
+            }
+            });
+
+        document.body.appendChild(modal1);
         
         document.getElementById("closeModal").addEventListener("click", function () {
-            modal.remove();
+            modal1.remove();
             modalOpen1 = false;
         });
     }
 </script>
 
+<script>
+        const item2 = document.getElementById("item2");
+        let modalOpen2 = false;
+
+if (item2) {
+    item2.addEventListener("click", function () {
+        if (!modalOpen2) {
+            openModal2();
+        }
+    });
+}                                                              //ВТОРОЙ ITEM
+function openModal2() {
+    modalOpen2 = true;
+    const modal2 = document.createElement("div");
+    modal2.id = "modal";
+    modal2.innerHTML = `
+        <div><h2>Вы уверены, что хотите купить:</h2></div>
+        <div class = "itemX"><img class = "design1" src = "тишка.png"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>3,000,000</b></div></div>
+        <div class = "buttons"><button id="openModal"><h2>Да</h2></button>
+        <button id="closeModal"><h2>Нет</h2></button></div>
+    `;
+    
+    document.body.appendChild(modal2);
+    
+    document.getElementById("openModal").addEventListener("click", function () {
+            modal2.remove();
+            modalOpen1 = false;
+
+            let counter = localStorage.getItem("counter");
+
+            if(counter < 3000000){
+                openModalYes();
+            }
+            else if(counter >= 3000000){
+                openModalYes1();
+                counter -= 3000000;
+                localStorage.setItem("counter", counter);
+                document.getElementById("carrier").innerHTML = counter;
+                console.log("После вычитания 3000000: ", counter);
+            }
+            });
+
+    document.body.appendChild(modal2);
+    
+    document.getElementById("closeModal").addEventListener("click", function () {
+        modal2.remove();
+        modalOpen2 = false;
+    });
+}
+</script>
+
+<script>
+    const item3 = document.getElementById("item3");
+    let modalOpen3 = false;
+
+if (item3) {
+item3.addEventListener("click", function () {
+    if (!modalOpen3) {
+        openModal3();
+    }
+});
+}                                                              //ТРЕТИЙ ITEM
+function openModal3() {
+modalOpen3 = true;
+const modal3 = document.createElement("div");
+modal3.id = "modal";
+modal3.innerHTML = `
+    <div><h2>Вы уверены, что хотите купить:</h2></div>
+    <div class = "itemX"><img class = "design1" src = "шарф.png"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>1,500,000</b></div></div>
+    <div class = "buttons"><button id="openModal"><h2>Да</h2></button>
+    <button id="closeModal"><h2>Нет</h2></button></div>
+`;
+
+document.body.appendChild(modal3);
+
+document.getElementById("openModal").addEventListener("click", function () {
+            modal3.remove();
+            modalOpen1 = false;
+
+            let counter = localStorage.getItem("counter");
+
+            if(counter < 1500000){
+                openModalYes();
+            }
+            else if(counter >= 1500000){
+                openModalYes1();
+                counter -= 1500000;
+                localStorage.setItem("counter", counter);
+                document.getElementById("carrier").innerHTML = counter;
+                console.log("После вычитания 1500000: ", counter);
+            }
+            });
+
+document.body.appendChild(modal3);
+
+document.getElementById("closeModal").addEventListener("click", function () {
+    modal3.remove();
+    modalOpen3 = false;
+});
+}
+</script>
+
+<script>
+    const item4 = document.getElementById("item4");
+    let modalOpen4 = false;
+
+if (item4) {
+item4.addEventListener("click", function () {
+    if (!modalOpen4) {
+        openModal4();
+    }
+});
+}                                                              //ЧЕТВЁРТЫЙ ITEM
+function openModal4() {
+modalOpen4 = true;
+const modal4 = document.createElement("div");
+modal4.id = "modal";
+modal4.innerHTML = `
+    <div><h2>Вы уверены, что хотите купить:</h2></div>
+    <div class = "itemX"><img class = "design4" src = "фри.jpg"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>300,000</b></div></div>
+    <div class = "buttons"><button id="openModal4"><h2>Да</h2></button>
+    <button id="closeModal4"><h2>Нет</h2></button></div>
+`;
+
+document.body.appendChild(modal4);
+
+document.getElementById("openModal4").addEventListener("click", function () {
+    modal4.remove();
+    modalOpen4 = false;
+                let counter = localStorage.getItem("counter");
+
+                if(counter < 300000){
+                    openModalYes();
+                }
+                else if(counter >= 300000){
+                    openModalYes1();
+                    counter -= 300000;
+                    localStorage.setItem("counter", counter);
+                    document.getElementById("carrier").innerHTML = counter;
+                    console.log("После вычитания 300000: ", counter);
+}
+});
+
+document.body.appendChild(modal4);
+
+document.getElementById("closeModal4").addEventListener("click", function () {
+    modal4.remove();
+    modalOpen4 = false;
+});
+}
+</script>
+
+<script>
+    const item5 = document.getElementById("item5");
+    let modalOpen5 = false;
+
+if (item5) {
+item5.addEventListener("click", function () {
+    if (!modalOpen5) {
+        openModal5();
+    }
+});
+}                                                              //ПЯТЫЙ ITEM
+function openModal5() {
+modalOpen5 = true;
+const modal5 = document.createElement("div");
+modal5.id = "modal";
+modal5.innerHTML = `
+    <div><h2>Вы уверены, что хотите купить:</h2></div>
+    <div class = "itemX"><img class = "design5" src = "скидка.jpg"></img><div class = "price1"><img id = "amountcoins" src = "COIN.png"></img><b>200,000</b></div></div>
+    <div class = "buttons"><button id="openModal4"><h2>Да</h2></button>
+    <button id="closeModal4"><h2>Нет</h2></button></div>
+`;
+
+document.body.appendChild(modal5);
+
+document.getElementById("openModal4").addEventListener("click", function () {
+    modal5.remove();
+    modalOpen5 = false;
+
+                    let counter = localStorage.getItem("counter");
+
+                    if(counter < 200000){
+                        openModalYes();
+                    }
+                    else if(counter >= 200000){
+                        openModalYes1();
+                        counter -= 200000;
+                        localStorage.setItem("counter", counter);
+                        document.getElementById("carrier").innerHTML = counter;
+                        console.log("После вычитания 200000: ", counter);
+}
+});
+
+document.body.appendChild(modal5);
+
+document.getElementById("closeModal4").addEventListener("click", function () {
+    modal5.remove();
+    modalOpen5 = false;
+});
+}
+</script>
+
+<script>
+function openModalYes() {
+    modalOpenYes = true;
+    const modalYes = document.createElement("div");
+    modalYes.id = "modalYes";
+    modalYes.innerHTML = `
+        <div class = "YES">
+        <div><img id = "krest" src = "крестик.svg"></img></div>
+        <div><h2>Вам не хватает<br> VSMOKEQQ COINS</h2></div>
+        </div>
+    `;
+      
+    document.body.appendChild(modalYes);
+
+document.getElementById("krest").addEventListener("click", function () {
+    modalYes.remove();
+    modalOpenYes = false;
+});
+        }
+</script>
+
+<script>
+
+    function openModalYes1() {
+        modalOpenYes1 = true;
+        const modalYes1 = document.createElement("div");
+        modalYes1.id = "modalYes";
+        modalYes1.innerHTML = `
+            <div class = "YES">
+            <div><img id = "krest" src = "крестик.svg"></img></div>
+            <div><h2>Спасибо за покупку<br>скоро вам напишут в лс тг</h2></div>
+            </div>
+        `;
+          
+        document.body.appendChild(modalYes1);
+
+        document.getElementById("krest").addEventListener("click", function () {
+            modalYes.remove();
+            modalOpenYes = false;
+});
+            }
+    </script>
 </html>
